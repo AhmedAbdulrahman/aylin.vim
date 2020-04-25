@@ -1,8 +1,16 @@
 # Aylin 🌌
 
-![aylin.vim][screenshot]
+<p align="center">
+  <img src="./images/logo.png" width="300" alt="Aylin">
+</p>
 
-Aylin is a modern and minimal VIM dark theme with bright colors. The theme is based on the great theme [Ayu theme][vscodeayu]. See Credits for a detailed lineage.
+<p align="center">
+    <em>Aylin is a modern and minimal VIM dark theme with bright colors. The theme is based on the great theme <a href="https://github.com/ayu-theme/vscode-ayu">Ayu theme</a>. See Credits for a detailed lineage.</em>
+</p>
+
+<p align="center">
+  <img src="./images/screenshot.png" alt="Screenshot">
+</p>
 
 ## Installation
 You can install `aylin.vim` with whatever package manager you use. For example:
@@ -58,11 +66,12 @@ All forms of contribution are welcome: bug reports, bug fixes, pull requests and
 
 ## Credits
 
-Credit goes to the [Ayu theme](https://github.com/ayu-theme/vscode-ayu). I ended up changing colors and their mappings.
+Credit goes to the [Ayu theme][vscodeayu]. I ended up changing colors and their mappings.
 
 ## License
 MIT License © 2020 Ahmed Abdulrahman. See [LICENSE.txt](./LICENSE.txt) for more information.
 
+[logo]: images/logo.png
 [screenshot]: images/screenshot.png
 [vscodeayu]: https://github.com/ayu-theme/vscode-ayu
 [vimplug]: https://github.com/junegunn/vim-plug
