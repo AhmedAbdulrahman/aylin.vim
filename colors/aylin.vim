@@ -124,3 +124,400 @@ let colorgroup['DiffAdd']           = {"GUIFG": _green, "GUIBG":  _black, "GUI":
 let colorgroup['DiffChange']        = {"GUIFG": _white, "GUIBG":  _black, "GUI":"NONE"}
 let colorgroup['DiffDelete']        = {"GUIFG": _pink, "GUIBG":  _black, "GUI":"NONE"}
 let colorgroup['DiffText']          = {"GUIFG": _pink, "GUIBG":  _black, "GUI":"NONE"}
+
+" === Highlighting Links ==="
+hi link Boolean               Number
+hi link Class                 Constant
+hi link ErrorMsg              Error
+hi link Delimiter             Define
+hi link Debug                 Special
+hi link Conditional           Define
+hi link Exception             PreProc
+hi link Float                 Number
+hi link Include               PreProc
+hi link Macro                 PreProc
+hi link Number                Identifier
+hi link Operator              Identifier
+hi link PreCondit             PreProc
+hi link Repeat                Statement
+hi link SpecialChar           Special
+hi link SpecialComment        Special
+hi link SpecialKey            Define
+hi link StorageClass          Identifier
+hi link Symbol                PreProc
+hi link Tag                   Normal
+hi link Typedef               Type
+
+" === Highlighting Plugins ==="
+
+" CtrlP "
+hi link CtrlPMatch             Character
+
+" Git commit "
+hi link gitcommitBranch        Constant
+hi link gitcommitSelectedFile  Statement
+hi link gitcommitDiscardedFile Structure
+hi link gitcommitUntrackedFile Structure
+hi link gitcommitSummary       String
+
+" Fugitive "
+hi link DiffAdd DiffAdd
+hi link DiffChange DiffChange
+hi link DiffDelete DiffDelete
+hi link DiffText DiffText
+
+" GitGutter "
+hi link GitGutterAdd          GitGutterAdd
+hi link GitGutterChange       GitGutterChange
+hi link GitGutterDelete       GitGutterDelete
+hi link GitGutterChangeDelete GitGutterChangeDelete
+
+" Signify "
+hi link SignifySignAdd GitGutterAdd
+hi link SignifySignChange GitGutterChange
+hi link SignifySignChangeDelete GitGutterChangeDelete
+hi link SignifySignDelete GitGutterDelete
+hi link SignifySignDeleteFirstLine SignifySignDelete
+
+" NERDtree "
+hi link NerdTreeCWD           Character
+hi link NerdTreeHelpKey       Character
+hi link NerdTreeHelpTitle     Statement
+hi link NerdTreeOpenable      NerdTreeCWD
+hi link NerdTreeClosable      Statement
+hi link NerdTreeDir           Normal
+hi link NerdTreeDirSlash      NerdTreeDir
+
+" PlainTasks (.todo) "
+hi link ptCompleteTask        Number
+hi link ptContext             Type
+hi link ptSection             Title
+hi link ptTask                Normal
+
+" VimPlug "
+hi link plugName              Character
+
+" Startify "
+hi link StartifyNumber        Character
+hi link StartifyBracket       StartifyNumber
+hi link StartifySection       Title
+hi link StartifyPath          Define
+hi link StartifySlash         StartifyPath
+hi link StartifyFile          Normal
+
+" === Highlighting Languages/Tools ==="
+
+" highlight clear ALEErrorSign "
+if exists('g:ale_enabled')
+  hi! link ALEError WarningMsg
+  hi! link ALEWarning WarningMsg
+  hi! link ALEInfo WarningMsg
+
+  hi! link ALEErrorSign WarningMsg
+  hi! link ALEWarningSign WarningMsg
+  hi! link ALEInfoSign WarningMsg
+  hi! link ALEVirtualTextWarning WarningMsg
+  hi! link ALEVirtualTextError WarningMsg
+endif
+
+" Apache "
+hi link apacheDeclaration     PreProc
+
+" CoffeeScript "
+hi link coffeeExtendedOp      Character
+hi link coffeeObject          Statement
+hi link coffeeObjAssign       Character
+hi link coffeeParen           Character
+
+" CSS "
+hi link cssAttr               Identifier
+hi link cssColor              Normal
+hi link cssClassName          String
+hi link cssProp               Function
+hi link cssPseudoClass        Character
+hi link cssPseudoClassId      Character
+hi link cssSelectorOp         Character
+hi link cssTagName           Identifier
+hi link cssDefinition           Identifier
+hi link cssNoise           Punctuation
+hi link cssBraces           Punctuation
+hi link cssIdentifier           Punctuation
+hi link cssIncludeKeyword           Punctuation
+hi link cssUnitDecorators           String
+
+" GraphQL "
+hi link graphqlName           Function
+hi link graphqlString         Comment
+
+" HAML "
+hi link hamlTag               Character
+
+" HTML "
+"hi link javaScript            Normal"
+hi link htmlTag               Label
+hi link htmlEndTag            Label
+hi link htmlTagName           Label
+hi link htmlScriptTag           Label
+hi link htmlArg               Attr
+hi link htmlTitle             Normal
+hi link htmlH1                Normal
+hi link htmlH2                htmlH1
+hi link htmlH3                htmlH1
+hi link htmlH4                htmlH1
+hi link htmlH5                htmlH1
+hi link htmlH6                htmlH1
+
+" JavaScript "
+hi link javascriptFuncArg     Character
+hi link javascriptFuncComma   Punctuation
+hi link javascriptFuncDef     Statement
+hi link javascriptFuncKeyword Statement
+hi link javascriptOpSymbols   Type
+hi link javascriptParens      Punctuation
+hi link javascriptEndcolons   Character
+hi link jsArrowFuncArgs       Normal
+hi link jsArrowFunction       Identifier
+hi link jsBraces              Punctuation
+hi link jsBrackets            Punctuation
+hi link jsClassBraces         Punctuation
+hi link jsClassDefinition     Class
+hi link jsClassFuncName       Function
+hi link jsClassKeyword        Identifier
+hi link jsClassProperty       Normal
+hi link jsClassBlock          Identifier
+hi link jsDecorator           Normal
+hi link jsDestructuringBraces Punctuation
+hi link jsExtendsKeyword      jsClassKeyword
+hi link jsExport              Identifier
+hi link jsImport              Identifier
+hi link jsFrom                Identifier
+hi link jsFuncBraces          Punctuation
+hi link jsFunction            Identifier
+hi link jsFuncCall            Function
+hi link jsFuncParens          Punctuation
+hi link jsFunctionKey         Function
+hi link jsGlobalObjects       Identifier
+hi link jsGlobalNodeObjects   Identifier
+hi link jsIfElseBraces        Punctuation
+hi link jsModuleBraces        Normal
+hi link jsModuleKeyword       Tag
+hi link jsNoise               Delimiter
+hi link jsObjectBraces        Punctuation
+hi link jsObjectKey           Normal
+hi link jsObjectValue         PreProc
+hi link jsObjectProp          Function
+hi link jsObjectColon         Punctuation
+hi link jsObjectShorthandProp Punctuation
+hi link jsParens              Punctuation
+hi link jsReturn              Identifier
+hi link jsSpreadOperator      Identifier
+hi link jsThis                Identifier
+
+" JSON "
+hi link jsonKeyword           Attr
+hi link jsonKeywordMatch      Punctuation
+hi link jsonQuote             Attr
+hi link jsonNoise             Punctuation
+hi link jsonString            Punctuation
+hi link jsonBraces            Normal
+hi link jsonBoolean           WarningMsg
+
+hi link jsonNumError Comment
+hi link jsonCommentError Comment
+hi link jsonSemicolonError Comment
+hi link jsonTrailingCommaError Comment
+hi link jsonMissingCommaError Comment
+hi link jsonStringSQError Comment
+hi link jsonNoQuotesError Punctuation
+hi link jsonTripleQuotesError Punctuation
+
+" hi link texSpecialChar        Special "
+" Markdown "
+hi link markdownHeadingDelimiter   Identifier
+hi link mkdCode                    Identifier
+hi link mkdIndentCode              Identifier
+hi link mkdLineBreak               Statement
+hi link markdownH1 Statement
+hi link markdownH2 Statement
+hi link markdownH3 Statement
+hi link markdownH4 Statement
+hi link markdownH5 Statement
+hi link markdownH6 Statement
+hi link markdownListMarker Constant
+hi link markdownCode Constant
+hi link markdownCodeBlock Constant
+hi link markdownCodeDelimiter Constant
+hi link markdownHeadingDelimiter Constant
+
+" MatchTagAlways "
+hi link MatchTag              Identifier
+
+" PHP "
+hi link phpRegion             Comment
+hi link phpConstant WarningMsg
+hi link phpCoreConstant WarningMsg
+hi link phpComment Comment
+hi link phpDocTags WarningMsg
+hi link phpDocCustomTags WarningMsg
+hi link phpException WarningMsg
+hi link phpBoolean WarningMsg
+hi link phpClass String
+hi link phpStaticClasses String
+hi link phpClassDelimiter WarningMsg
+hi link phpFunction Label "Custom functions"
+hi link phpFunctions Character "Built-in functions"
+hi link phpSuperglobals Normal "Global functions"
+hi link phpMagicConstants Normal "__CLASS__"
+hi link phpServerVars WarningMsg
+hi link phpMethods WarningMsg
+hi link phpMethodsVar Label
+hi link phpSplatOperator Label
+hi link phpStringDelimiter String "String Quotes"
+hi link phpStructure Label
+hi link phpStringSingle String
+hi link phpStringDouble Identifier
+hi link phpBacktick Identifier
+hi link phpNumber Identifier
+hi link phpFloat WarningMsg
+hi link phpBaselib Identifier
+hi link phpRepeat WarningMsg
+hi link phpStatement Identifier
+hi link phpKeyword Identifier "function"
+hi link phpSCKeyword Identifier
+hi link phpFCKeyword Identifier
+hi link phpYieldFromKeyword Identifier
+hi link phpDocNamespaceSeparator WarningMsg
+hi link phpClassNamespaceSeparator WarningMsg
+hi link phpUseNamespaceSeparator WarningMsg
+hi link phpType Identifier "public, privat, protected"
+hi link phpInclude Identifier
+hi link phpDefine WarningMsg
+hi link phpBackslashSequences WarningMsg
+hi link phpBackslashDoubleQuote WarningMsg
+hi link phpBackslashSingleQuote WarningMsg
+hi link phpParent Punctuation
+hi link phpBrackets Punctuation
+hi link phpIdentifierConst WarningMsg
+hi link phpParentError WarningMsg
+hi link phpOctalError WarningMsg
+hi link phpInterpSimpleError WarningMsg
+hi link phpInterpBogusDollarCurley WarningMsg
+hi link phpInterpDollarCurly1 WarningMsg
+hi link phpInterpDollarCurly2 WarningMsg
+hi link phpInterpSimpleBracketsInner WarningMsg
+hi link phpInterpSimpleCurly WarningMsg
+hi link phpInterpVarname WarningMsg
+hi link phpIntVar Punctuation
+hi link phpVarSelector PreProc "$ sign"
+hi link phpMemberSelector Identifier "->"
+hi link phpIdentifier PreProc
+hi link phpTodo Identifier
+hi link phpDocTodo Identifier
+hi link phpOperator Identifier "+, -, x, *"
+hi link phpRelation WarningMsg
+hi link phpIdentifierSimply WarningMsg
+
+"Pug"
+hi link pugHtmlConditionalComment                WarningMsg
+
+" Python "
+hi link pythonMagic            Identifier
+hi link pythonBuiltin            Identifier
+hi link pythonStatement            Identifier
+hi link pythonOperator            Punctuation
+hi link pythonFunction            Character
+hi link pythonString            Label
+hi link pythonImport            Identifier
+hi link pythonDef            Punctuation
+hi link pythonAs            Punctuation
+hi link pythonDocstring            Punctuation
+hi link pythonSpecial            Punctuation
+hi link pythonDecorator            Punctuation
+hi link pythonExceptions            Punctuation
+
+" Ruby "
+hi link rubyAccess            Access
+hi link rubyBlockParameterList PreProc
+hi link rubyCallback          Character
+hi link rubyClass             Label
+hi link rubyClassName         UnderlinedBold
+hi link rubyControl           Statement
+hi link rubyConstant          Constant
+hi link rubyEntity            Character
+hi link rubyInclude           Include
+hi link rubyInterpolation     Identifier
+hi link rubyMacro             Character
+hi link rubyModule            Module
+hi link rubyStringDelimiter   rubyString
+hi link rubySymbol            Symbol
+hi link rubyRoute             Type
+
+" SASS "
+hi link sassClassChar         Type
+hi link sassClass             Type
+hi link sassIdChar            Type
+hi link sassId                Type
+hi link sassProperty          Type
+hi link scssProperty          Identifier
+hi link scssMixin          Identifier
+hi link scssVariable         Attr
+hi link scssInclude         Identifier
+hi link scssExtend         Identifier
+hi link scssFunctionDefinition         Identifier
+hi link scssReturn         Identifier
+hi link scssEachKeyword         Identifier
+hi link scssForKeyword         Identifier
+hi link scssImport         Identifier
+hi link scssSemicolon         Punctuation
+hi link scssAtRoot         Identifier
+hi link scssSelectorName         String
+
+" Slim "
+hi link slimBegin             Normal
+hi link slimClass             Character
+hi link slimClassChar         Character
+hi link slimId                Character
+hi link slimIdChar            Character
+hi link rubyKeyword           PreProc
+hi link slimText              Normal
+
+" TypeScript "
+hi link typescriptBOM                 Normal
+hi link typescriptBraces              Punctuation
+hi link typescriptCall                Define
+hi link typescriptClassExtends        Label
+hi link typescriptClassHeritage       Constant
+hi link typescriptClassKeyword        Identifier
+hi link typescriptClassName           Identifier
+hi link typescriptFuncKeyword         Identifier
+hi link typescriptDefault             Identifier
+hi link typescriptExport              PreProc
+hi link typescriptIdentifier          Identifier
+hi link typescriptIdentifierName      Character
+hi link typescriptImport              Identifier
+hi link typescriptMember              Define
+hi link typescriptObjectKey           Define
+hi link typescriptObjectLabel         Define
+hi link typescriptParens              Punctuation
+hi link typeScriptFuncComma              Punctuation
+hi link typescriptParenExp            Delimiter
+hi link typescriptProp                PreProc
+hi link typescriptReserved            PreProc
+hi link typescriptTypeReference       Define
+hi link tsxTagName                    Statement
+
+" VimL "
+hi link vimCmdSep             Character
+
+" YAML "
+hi link yamlBlockMappingKey   Punctuation
+hi link yamlDocumentStart     Punctuation
+hi link yamlKeyValueDelimiter Punctuation
+hi link yamlPlainScalar       Punctuation
+
+" XML "
+" hi link xmlAttrib             Normal"
+hi link xmlTag                Xml
+hi link xmlTagName            Identifier
+hi link xmlEndTag             Tag
+hi link xmlAttrib             Attr
