@@ -38,3 +38,8 @@ endif
 set t_Co=256
 
 let g:colors_name="aylin"
+
+" Not all terminals support italics properly. If yours does, opt-in.
+if !exists("g:aylin_terminal_italics")
+  let g:aylin_terminal_italics = 0
+endif
