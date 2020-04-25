@@ -521,3 +521,85 @@ hi link xmlTag                Xml
 hi link xmlTagName            Identifier
 hi link xmlEndTag             Tag
 hi link xmlAttrib             Attr
+
+" === Expand colorgroups === "
+
+let s:colors = {}
+" http://choorucode.com/2011/07/29/vim-chart-of-color-names/"
+
+let valid_cterm_colors =
+      \ [
+      \     'Black', 'DarkBlue', 'DarkGreen', 'DarkCyan',
+      \     'DarkRed', 'DarkMagenta', 'Brown', 'DarkYellow',
+      \     'LightGray', 'LightGrey', 'Gray', 'Grey',
+      \     'DarkGray', 'DarkGrey', 'Blue', 'LightBlue',
+      \     'Green', 'LightGreen', 'Cyan', 'LightCyan',
+      \     'Red', 'LightRed', 'Magenta', 'LightMagenta',
+      \     'Yellow', 'LightYellow', 'White',
+      \ ]
+for key in keys(colorgroup)
+  let s:colors = colorgroup[key]
+  if has_key(s:colors, 'TERM')
+    let term = s:colors['TERM']
+  else
+    let term = 'NONE'
+  endif
+  if has_key(s:colors, 'GUI')
+    let gui = s:colors['GUI']
+  else
+    let gui='NONE'
+  endif
+  if has_key(s:colors, 'GUIFG')
+    let guifg = s:colors['GUIFG']
+  else
+    let guifg='NONE'
+  endif
+  if has_key(s:colors, 'GUIBG')
+    let guibg = s:colors['GUIBG']
+  else
+    let guibg='NONE'
+  endif
+  if g:aylin_terminal_italics == 0
+  	if has_key(s:colors, 'CTERM') && s:colors["CTERM"] == "italic"
+	  unlet a:colors.CTERM
+	endif
+    if has_key(s:colors, "GUI") && s:colors["GUI"] == "italic"
+      unlet s:colors.GUI
+    endif
+  endif
+  if has_key(s:colors, 'CTERM')
+    let cterm = s:colors['CTERM']
+  else
+    let cterm=gui
+  endif
+  if has_key(s:colors, 'CTERMFG')
+    let ctermfg = s:colors['CTERMFG']
+  else
+    if index(valid_cterm_colors, guifg) != -1
+      let ctermfg=guifg
+    else
+      let ctermfg='Blue'
+    endif
+  endif
+  if has_key(s:colors, 'CTERMBG')
+    let ctermbg = s:colors['CTERMBG']
+  else
+    if index(valid_cterm_colors, guibg) != -1
+      let ctermbg=guibg
+    else
+      let ctermbg='NONE'
+    endif
+  endif
+  if has_key(s:colors, 'GUISP')
+    let guisp = s:colors['GUISP']
+  else
+    let guisp='NONE'
+  endif
+  if key =~ '^\k*$'
+    execute "hi ".key." term=".term." cterm=".cterm." gui=".gui." ctermfg=".ctermfg." guifg=".guifg." ctermbg=".ctermbg." guibg=".guibg." guisp=".guisp
+  endif
+endfor
+
+" Must appear at the end of the file to work around this oddity:
+" https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
+set background=dark
