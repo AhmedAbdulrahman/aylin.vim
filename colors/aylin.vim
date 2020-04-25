@@ -112,3 +112,15 @@ let colorgroup['Error']        = {"GUIFG": _black, "GUIBG": _aubergine}
 
 " === Own highlighting groups ==="
 let colorgroup['UnderlinedBold']   = {"GUIFG": _marzipan, "GUI": "underline,bold"}
+
+" === GitGutter highlighting groups ==="
+let colorgroup['GitGutterAdd']            = {"GUIFG": _green, "GUIBG":  _black}
+let colorgroup['GitGutterChange']         = {"GUIFG": _sap, "GUIBG":  _black}
+let colorgroup['GitGutterDelete']         = {"GUIFG": _pink, "GUIBG":  _black}
+let colorgroup['GitGutterChangeDelete']   = {"GUIFG": _sap, "GUIBG":  _black}
+
+" === Git highlighting groups ==="
+let colorgroup['DiffAdd']           = {"GUIFG": _green, "GUIBG":  _black, "GUI":"NONE"}
+let colorgroup['DiffChange']        = {"GUIFG": _white, "GUIBG":  _black, "GUI":"NONE"}
+let colorgroup['DiffDelete']        = {"GUIFG": _pink, "GUIBG":  _black, "GUI":"NONE"}
+let colorgroup['DiffText']          = {"GUIFG": _pink, "GUIBG":  _black, "GUI":"NONE"}
