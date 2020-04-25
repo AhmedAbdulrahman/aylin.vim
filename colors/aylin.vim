@@ -1,0 +1,6 @@
+" vim:fdm=marker"
+" Vim Color File"
+" Name: aylin.vim"
+" Author: Ahmed Abdulrahman (@_ahmed_ab)"
+" Maintainer: https://github.com/AhmedAbdulrahman/aylin.vim"
+" License: The MIT License (MIT)"
