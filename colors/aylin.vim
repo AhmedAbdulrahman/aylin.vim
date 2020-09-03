@@ -483,28 +483,52 @@ hi link slimText              Normal
 
 " TypeScript "
 hi link typescriptBOM                 Normal
-hi link typescriptBraces              Punctuation
-hi link typescriptCall                Define
-hi link typescriptClassExtends        Label
-hi link typescriptClassHeritage       Constant
-hi link typescriptClassKeyword        Identifier
-hi link typescriptClassName           Identifier
-hi link typescriptFuncKeyword         Identifier
-hi link typescriptDefault             Identifier
-hi link typescriptExport              PreProc
-hi link typescriptIdentifier          Identifier
-hi link typescriptIdentifierName      Character
-hi link typescriptImport              Identifier
-hi link typescriptMember              Define
-hi link typescriptObjectKey           Define
-hi link typescriptObjectLabel         Define
-hi link typescriptParens              Punctuation
-hi link typeScriptFuncComma              Punctuation
-hi link typescriptParenExp            Delimiter
-hi link typescriptProp                PreProc
-hi link typescriptReserved            PreProc
-hi link typescriptTypeReference       Define
-hi link tsxTagName                    Statement
+hi link typescriptBraces               Punctuation
+hi link typescriptParens               Punctuation
+hi link typescriptTypeReference        String
+hi link typescriptAsyncFuncKeyword     Identifier
+hi link typescriptAsyncFunc            Identifier
+hi link typescriptArrowFunc            Identifier
+hi link typescriptFuncKeyword          Identifier
+hi link typescriptArrowFuncArg         Identifier
+hi link typescriptFuncName             Function
+hi link typescriptFuncArg              Identifier
+hi link typescriptFuncComma            Identifier
+hi link typescriptFuncTypeArrow         String
+hi link typescriptTemplate             Attr
+hi link typescriptTemplateSB           Attr
+hi link typescriptObjectLabel          Normal
+hi link typescriptDestructureLabel     Attr
+hi link typescriptObjectAsyncKeyword     Attr
+hi link typescriptInterfaceKeyword     Identifier
+hi link typescriptInterfaceExtends     Identifier
+hi link typescriptInterfaceName        String
+hi link typescriptImport               Identifier
+hi link typescriptImportType           Normal
+hi link typescriptExport               Identifier
+hi link typescriptExportType           Normal
+"Types=> key:value"
+hi link typescriptMember               Normal
+hi link typescriptPredefinedType        Attr
+hi link typescriptStringMember         Normal
+hi link typescriptString               String
+hi link typescriptConditional          Identifier
+hi link typescriptConditionalElse      Identifier
+"default"
+hi link typescriptCase                 Identifier
+hi link typescriptDefault              Identifier
+hi link typescriptMethodAccessor       String
+hi link typescriptKeywordOp            String
+"return"
+hi link typescriptStatementKeyword     Identifier
+hi link typescriptNull                 Attr
+hi link typescriptBoolean              Attr
+hi link typescriptConstructorType       Attr
+hi link typescriptTypeQuery             Attr
+hi link typescriptAccessibilityModifier Attr
+hi link typescriptOptionalMark          Attr
+hi link typescriptReadonlyModifier      Attr
+hi link typescriptTypeParameter         Attr
 
 " VimL "
 hi link vimCmdSep             Character
