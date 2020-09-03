@@ -78,7 +78,7 @@ let colorgroup['TablineFill']  = {"GUIBG":  _black}
 let colorgroup['Title']        = {"GUIFG": _marzipan, "GUI": "bold"}
 let colorgroup['Todo']         = {"GUIFG": _black, "GUIBG":  _sky, "GUI": "italic"}
 let colorgroup['VertSplit']    = {"GUIFG": _semiblack,      "GUIBG":  _semiblack}
-let colorgroup['Visual']       = {"GUIBG": _semigray}
+let colorgroup['Visual']       = {"GUIBG": _lightblack}
 if &background == "light"
   let colorgroup['Visual']     = {"GUIFG": _l_white,     "GUIBG":  _sap}
 endif
