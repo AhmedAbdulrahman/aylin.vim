@@ -14,9 +14,9 @@
 :let _gray        = '#606375'
 :let _gray_dark   = '#535560'
 :let _semigray    = "#42444b"
-:let _lightblack  = '#383b47'
-:let _semiblack   = '#2d2f37'
-:let _black       = '#24262e'
+:let _lightblack  = '#313e52'
+:let _semiblack   = '#262f3e'
+:let _black       = '#1f2430'
 
 :let _aubergine   = '#e18fb5'
 :let _marzipan    = '#ecc48d'
@@ -39,7 +39,7 @@ set t_Co=256
 
 let g:colors_name="aylin"
 
-" Not all terminals support italics properly. If yours does, opt-in.
+" Not all terminals support italics properly. If yours does, opt-in."
 if !exists("g:aylin_terminal_italics")
   let g:aylin_terminal_italics = 0
 endif
