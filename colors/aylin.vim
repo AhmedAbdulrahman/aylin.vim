@@ -16,9 +16,9 @@
 :let _semigray    = "#42444b"
 :let _lightblack  = '#313e52'
 :let _semiblack   = '#262f3e'
-:let _black       = '#1f2430'
+:let _black       = '#1b202a'
 
-:let _aubergine   = '#e18fb5'
+:let _aubergine   = '#FD98B9'
 :let _marzipan    = '#ecc48d'
 :let _d_turquoise = '#7fdbca'
 :let _l_sky       = '#9fd4ff'
