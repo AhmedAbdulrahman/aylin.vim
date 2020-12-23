@@ -60,6 +60,15 @@ if (has("termguicolors"))
 endif
 ```
 
+### Vim Lightline
+To use the included [lightline.vim](https://github.com/itchyny/lightline.vim) theme:
+
+```vim
+let g:lightline = {
+      \ 'colorscheme': 'aylin',
+      \ }
+```
+
 ## Contributing
 All forms of contribution are welcome: bug reports, bug fixes, pull requests and simple suggestions. Thanks!
 
