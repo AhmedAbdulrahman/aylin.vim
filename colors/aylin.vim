@@ -16,7 +16,7 @@
 :let _semigray    = "#42444b"
 :let _lightblack  = '#313e52'
 :let _semiblack   = '#262f3e'
-:let _black       = '#1b202a'
+:let _black       = '#1f2430'
 
 :let _aubergine   = '#FD98B9'
 :let _marzipan    = '#ecc48d'
@@ -66,9 +66,16 @@ endif
 let colorgroup['MatchParen']   = {"GUIFG": _black, "GUIBG":  _l_white}
 let colorgroup['ModeMsg']      = {"GUIFG": _black, "GUIBG":  _marzipan}
 let colorgroup['Whitespace']   = {"GUIFG": _semiblack, "CTERMFG":235}
-let colorgroup['Pmenu']        = {"GUIFG": _l_white,     "GUIBG":  _gray_dark}
-let colorgroup['PmenuSel']     = {"GUIFG": _black, "GUIBG":  _marzipan}
+
+"Popup menu: normal item"
+let colorgroup['Pmenu']        = {"GUIFG": _l_white,     "GUIBG":  _semiblack}
+"Popup menu: selected item"
+let colorgroup['PmenuSel']     = {"GUIBG":  _gray_dark}
+"Popup menu: scrollbar"
 let colorgroup['PmenuSbar']    = {"GUIBG":  _black}
+"Thumb of the scrollbar."
+let colorgroup['PmenuThumb']    = {"GUIBG":  _black}
+
 let colorgroup['Search']       = {"GUIBG":  _gray_dark, "GUI": "underline"}
 let colorgroup['SignColumn']   = {"GUIBG":  _black}
 let colorgroup['StatusLine']   = {"GUIFG": _gray,      "GUIBG":  _semiblack}
