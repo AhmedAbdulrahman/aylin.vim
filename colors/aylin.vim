@@ -48,6 +48,10 @@ let colorgroup = {}
 
 " === Highlights ==="
 let colorgroup['Normal']       = {"GUIFG": _l_white,     "GUIBG":  _black}
+let colorgroup['NormalNC']     = {"GUIFG": _l_white,     "GUIBG":  _black}
+let colorgroup['NormalSB']     = {"GUIFG": _d_white,     "GUIBG":  _semiblack}
+let colorgroup['NormalFloat']  = {"GUIFG": _l_white,     "GUIBG":  _black}
+let colorgroup['FloatBorder']  = {"GUIFG": _lightblack}
 let colorgroup['Darker']       = {"GUIFG": _gray,      "GUIBG":  _black}
 let colorgroup['ColorColumn']  = {"GUIFG": _black, "GUIBG":  _aubergine}
 let colorgroup['Conceal']      = {"GUIFG": _sap,        "GUI": "bold"}
@@ -82,9 +86,10 @@ let colorgroup['StatusLine']   = {"GUIFG": _gray,      "GUIBG":  _semiblack}
 let colorgroup['StatusLineNC'] = {"GUIFG": _gray_dark, "GUIBG":  _semiblack}
 let colorgroup['Tabline']      = {"GUIFG": _gray,      "GUIBG":  _semiblack}
 let colorgroup['TablineFill']  = {"GUIBG":  _black}
+let colorgroup['TabLineSel']   = {"GUIFG": _l_sky, "GUIBG":  _black, "CTERM": "reverse", "GUI": "reverse"}
 let colorgroup['Title']        = {"GUIFG": _marzipan, "GUI": "bold"}
 let colorgroup['Todo']         = {"GUIFG": _black, "GUIBG":  _sky, "GUI": "italic"}
-let colorgroup['VertSplit']    = {"GUIFG": _semiblack,      "GUIBG":  _semiblack}
+let colorgroup['VertSplit']    = {"GUIFG": _lightblack}
 let colorgroup['Visual']       = {"GUIBG": _lightblack}
 if &background == "light"
   let colorgroup['Visual']     = {"GUIFG": _l_white,     "GUIBG":  _sap}
@@ -116,6 +121,9 @@ let colorgroup['Type']         = {"GUIFG": _d_white}
 let colorgroup['Special']      = {"GUIFG": _aubergine}
 let colorgroup['Underlined']   = {"GUIFG": _marzipan, "GUI": "underline"}
 let colorgroup['Error']        = {"GUIFG": _black, "GUIBG": _aubergine}
+let colorgroup['MarkdownH1']     = {"GUIFG": _sky, "GUI": "bold"}
+let colorgroup['MarkdownH2']     = {"GUIFG": _l_sky, "GUI": "bold"}
+let colorgroup['MarkdownLinkText']     = {"GUIFG": _l_sky, "GUI": "underline"}
 
 " === Own highlighting groups ==="
 let colorgroup['UnderlinedBold']   = {"GUIFG": _marzipan, "GUI": "underline,bold"}
@@ -131,6 +139,79 @@ let colorgroup['DiffAdd']           = {"GUIFG": _green, "GUIBG":  _black, "GUI":
 let colorgroup['DiffChange']        = {"GUIFG": _white, "GUIBG":  _black, "GUI":"NONE"}
 let colorgroup['DiffDelete']        = {"GUIFG": _pink, "GUIBG":  _black, "GUI":"NONE"}
 let colorgroup['DiffText']          = {"GUIFG": _pink, "GUIBG":  _black, "GUI":"NONE"}
+
+" === NvimTree highlighting groups ==="
+let colorgroup['NvimTreeNormal']              = {"GUIFG": _d_white, "GUIBG":  _black }
+let colorgroup['NvimTreeNormalNC']            = {"GUIFG": _d_white, "GUIBG":  _black }
+let colorgroup['NvimTreeRootFolder']          = {"GUIFG": _gray_light, "GUIBG":  _black, "GUI":"bold"}
+let colorgroup['NvimTreeFolderName']          = {"GUIFG": _gray_light, "GUIBG":  _black }
+let colorgroup['NvimTreeOpenedFolderName']    = {"GUIFG": _d_white, "GUIBG":  _black }
+let colorgroup['NvimTreeGitDirty']            = {"GUIFG": _marzipan, "GUIBG":  _black }
+let colorgroup['NvimTreeGitNew']              = {"GUIFG": _green, "GUIBG":  _black }
+let colorgroup['NvimTreeGitDeleted']          = {"GUIFG": _pink, "GUIBG":  _black }
+let colorgroup['NvimTreeSpecialFile']         = {"GUIFG": _d_turquoise, "GUIBG":  _black, "GUI":"underline"}
+let colorgroup['NvimTreeIndentMarker']        = {"GUIFG": _lightblack, "GUIBG":  _black}
+let colorgroup['NvimTreeImageFile']           = {"GUIFG": _d_white, "GUIBG":  _black }
+let colorgroup['NvimTreeSymlink']             = {"GUIFG": _d_white, "GUIBG":  _black }
+let colorgroup['NvimTreeGitStaged']           = {"GUIFG": _d_white, "GUIBG":  _black }
+let colorgroup['NvimTreeGitMerge']            = {"GUIFG": _d_white, "GUIBG":  _black }
+let colorgroup['NvimTreeGitRenamed']          = {"GUIFG": _d_white, "GUIBG":  _black }
+
+" === COMPLETION highlighting groups ==="
+let colorgroup['CmpDocumentation']           = {"GUIFG": _d_white, "GUIBG":  _sap, "GUI":"NONE" }
+let colorgroup['CmpDocumentationBorder']     = {"GUIFG": _d_white, "GUIBG":  _sap, "GUI":"NONE" }
+"uncompleted item that may be good for completion"
+let colorgroup['CmpItemAbbr']                = {"GUIFG": _d_white, "GUIBG":  _lightblack, "GUI":"NONE" }
+let colorgroup['CmpItemAbbrDeprecated']      = {"GUIFG": _d_white, "GUIBG":  _sap, "GUI":"NONE" }
+"matched item (what you typed until present)"
+let colorgroup['CmpItemAbbrMatch']           = {"GUIFG": _aubergine, "GUIBG":  _lightblack, "GUI":"NONE" }
+"fuzzy match for what you typed"
+let colorgroup['CmpItemAbbrMatchFuzzy']      = {"GUIFG": _d_turquoise, "GUIBG":  _lightblack, "GUI":"NONE" }
+let colorgroup['CmpItemKind']                = {"GUIFG": _aubergine, "GUIBG":  _sap, "GUI":"NONE" }
+let colorgroup['CmpItemMenu']                = {"GUIFG": _l_sky, "GUIBG":  _lightblack, "GUI":"NONE" }
+
+let colorgroup['LspDiagnosticsDefaultError'] = {"GUIFG": _pink, "GUIBG":  _black }
+let colorgroup['LspDiagnosticsDefaultWarning'] = {"GUIFG": _marzipan, "GUIBG":  _black }
+let colorgroup['LspDiagnosticsDefaultHint'] = {"GUIFG": _l_sky, "GUIBG":  _black }
+
+let colorgroup['LspFloatWinNormal']          = {"GUIFG": _d_white, "GUIBG":  _aubergine }
+let colorgroup['LspFloatWinBorder']          = {"GUIFG": _sap, "GUIBG":  _sap }
+let colorgroup['LspFloatWinBorder']          = {"GUIFG": _sap, "GUIBG":  _sap }
+let colorgroup['LspFloatWinBorder']          = {"GUIFG": _sap, "GUIBG":  _sap }
+
+# let colorgroup['BufferLineIndicatorSelected']   = {"GUIFG": _pink}
+# let colorgroup['BufferLineFill']                = {"GUIBG":  _pink}
+
+"used for highlighting the current line in terminal-debug"
+let colorgroup['debugPC']                    = {"GUIBG":  _black}
+"used for breakpoint colors in terminal-debug"
+let colorgroup['debugBreakpoint']            = {"GUIBG":  _semiblack}
+
+"These groups are for the native LSP client. Some other LSP clients may"
+"use these groups, or use their own. Consult your LSP client's"
+"documentation."
+
+"used for highlighting 'text' references"
+let colorgroup['LspReferenceText']          = {"GUIBG":  _gray_light }
+"used for highlighting 'read' references"
+let colorgroup['LspReferenceRead']          = {"GUIBG":  _gray_light }
+"used for highlighting 'write' references"
+let colorgroup['LspReferenceWrite']         = {"GUIBG":  _gray_light }
+
+let colorgroup['DiagnosticError']        = {"GUIFG":  _pink }
+let colorgroup['DiagnosticWarn']         = {"GUIFG":  _marzipan }
+let colorgroup['DiagnosticInfo']         = {"GUIFG":  _sky }
+let colorgroup['DiagnosticHint']         = {"GUIFG":  _d_turquoise }
+
+let colorgroup['DiagnosticVirtualTextError']        = {"GUIFG": _pink, "GUIBG":  color_helper#hex_color_darken(_pink, 0.10) }
+let colorgroup['DiagnosticVirtualTextWarn']         = {"GUIFG": _marzipan,"GUIBG":  color_helper#hex_color_darken(_marzipan, 0.10) }
+let colorgroup['DiagnosticVirtualTextInfo']         = {"GUIFG": _sky,"GUIBG":  color_helper#hex_color_darken(_sky, 0.10) }
+let colorgroup['DiagnosticVirtualTextHint']         = {"GUIFG": _d_turquoise,"GUIBG":  color_helper#hex_color_darken(_d_turquoise, 0.10) }
+
+let colorgroup['DiagnosticUnderlineError']        = {"style":  "undercurl", "sp": _pink }
+let colorgroup['DiagnosticUnderlineWarn']         = {"style":  "undercurl", "sp": _marzipan }
+let colorgroup['DiagnosticUnderlineInfo']         = {"style":  "undercurl", "sp": _sky }
+let colorgroup['DiagnosticUnderlineHint']         = {"style":  "undercurl", "sp": _d_turquoise }
 
 " === Highlighting Links ==="
 hi link Boolean               Number
@@ -340,21 +421,13 @@ hi link jsonTripleQuotesError Punctuation
 
 " hi link texSpecialChar        Special "
 " Markdown "
-hi link markdownHeadingDelimiter   Identifier
-hi link mkdCode                    Identifier
-hi link mkdIndentCode              Identifier
-hi link mkdLineBreak               Statement
-hi link markdownH1 Statement
-hi link markdownH2 Statement
-hi link markdownH3 Statement
-hi link markdownH4 Statement
-hi link markdownH5 Statement
-hi link markdownH6 Statement
-hi link markdownListMarker Constant
-hi link markdownCode Constant
-hi link markdownCodeBlock Constant
-hi link markdownCodeDelimiter Constant
-hi link markdownHeadingDelimiter Constant
+hi link markdownHeadingDelimiter        Identifier
+hi link markdownCode                    Identifier
+hi link markdownIndentCode              Identifier
+hi link markdownLineBreak               Statement
+hi link markdownH1 MarkdownH1
+hi link markdownH2 MarkdownH2
+hi link markdownLinkText markdownLinkText
 
 " MatchTagAlways "
 hi link MatchTag              Identifier
@@ -630,6 +703,53 @@ for key in keys(colorgroup)
     execute "hi ".key." term=".term." cterm=".cterm." gui=".gui." ctermfg=".ctermfg." guifg=".guifg." ctermbg=".ctermbg." guibg=".guibg." guisp=".guisp
   endif
 endfor
+
+
+" Returns a darkened color using the given color and the percent to darken it"
+" by."
+" Example: color_helper#hex_color_darken('#FFFFFF', 0.10)"
+" Returns: '#E5E5E5'"
+
+function! color_helper#hex_color_darken(color, percent)
+  let l:rgb = color_helper#hex_color_to_rgb(a:color)
+  let l:rgb_darkened = []
+
+  for i in l:rgb
+    call add(l:rgb_darkened, float2nr(i * (1 - a:percent)))
+  endfor
+
+  return color_helper#rgb_color_to_hex(l:rgb_darkened)
+endfunction
+
+function! color_helper#hex_color_to_rgb(hex_color)
+  let l:rgb = []
+
+  if a:hex_color =~ g:indent_guides_color_hex_pattern
+    let l:red   = color_helper#hex_to_dec(strpart(a:hex_color, 1, 2))
+    let l:green = color_helper#hex_to_dec(strpart(a:hex_color, 3, 2))
+    let l:blue  = color_helper#hex_to_dec(strpart(a:hex_color, 5, 2))
+    let l:rgb = [l:red, l:green, l:blue]
+  end
+
+  return l:rgb
+endfunction
+
+function! color_helper#hex_to_dec(arg)
+  return (a:arg =~? '^0x') ? a:arg + 0 : ('0x'.a:arg) + 0
+endfunction
+
+function! color_helper#dec_to_hex(arg, padding)
+  return toupper(printf('%0' . a:padding . 'x', a:arg + 0))
+endfunction
+
+function! color_helper#rgb_color_to_hex(rgb_color)
+  let l:hex_color  = '#'
+  let l:hex_color .= color_helper#dec_to_hex(a:rgb_color[0], 2) " red"
+  let l:hex_color .= color_helper#dec_to_hex(a:rgb_color[1], 2) " green"
+  let l:hex_color .= color_helper#dec_to_hex(a:rgb_color[2], 2) " blue"
+
+  return l:hex_color
+endfunction
 
 " Must appear at the end of the file to work around this oddity:
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
