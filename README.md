@@ -58,7 +58,7 @@ use 'AhmedAbdulrahman/aylin.vim'
 
 [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
-Plug 'AhmedAbdulrahman/aylin.vim', { 'branch': 'aylin-nvim' }
+Plug 'AhmedAbdulrahman/aylin.vim', { 'branch': '0.5-nvim' }
 ```
 
 ## 🚀 Usage
