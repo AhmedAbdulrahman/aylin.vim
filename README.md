@@ -12,6 +12,9 @@
   <img src="./images/screenshot.png" alt="Screenshot">
 </p>
 
+*If you want to use this plugin with Neovim 0.5, please use the
+`0.5-nvim` branch
+
 ## Installation
 You can install `aylin.vim` with whatever package manager you use. For example:
 - [Pathogen][vimpathogen]
