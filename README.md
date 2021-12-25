@@ -8,67 +8,91 @@
     <em>Aylin is a modern and minimal VIM dark theme with bright colors. The theme is based on the great theme <a href="https://github.com/ayu-theme/vscode-ayu">Ayu theme</a>. See Credits for a detailed lineage.</em>
 </p>
 
-<p align="center">
-  <img src="./images/screenshot.png" alt="Screenshot">
-</p>
+![Screenshot](images/screenshot-1.png)
+
+| ![Screenshot](images/screenshot-2.png) | ![Screenshot](images/screenshot-3.png) | ![Screenshot](images/screenshot-4.png) |
+| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+
+## ✨ Features
+
+- supports the latest Neovim 5.0 features like TreeSitter and LSP
+- minimal inactive statusline
+- vim terminal colors
+- darker background for sidebar-like windows
+- color configs for [Kitty](https://sw.kovidgoyal.net/kitty/conf.html?highlight=include), [Alacritty](https://github.com/alacritty/alacritty) and [Fish Shell](https://fishshell.com/)
+- **lualine** theme
+
+### Plugin Support
+
+- [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
+- [LSP Trouble](https://github.com/folke/lsp-trouble.nvim)
+- [LSP Saga](https://github.com/glepnir/lspsaga.nvim)
+- [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
+- [Git Gutter](https://github.com/airblade/vim-gitgutter)
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+- [WhichKey](https://github.com/liuchengxu/vim-which-key)
+- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [Dashboard](https://github.com/glepnir/dashboard-nvim)
+- [BufferLine](https://github.com/akinsho/nvim-bufferline.lua)
+- [Lualine](https://github.com/hoob3rt/lualine.nvim)
+- [Lightline](https://github.com/itchyny/lightline.vim)
+- [Neogit](https://github.com/TimUntersberger/neogit)
+- [vim-sneak](https://github.com/justinmk/vim-sneak)
+- [Fern](https://github.com/lambdalisue/fern.vim)
+- [Barbar](https://github.com/romgrk/barbar.nvim)
+
+## ⚡️ Requirements
+
+- Neovim >= 0.5.0
 
 ## Installation
-You can install `aylin.vim` with whatever package manager you use. For example:
-- [Pathogen][vimpathogen]
-- [Vundle][vundle]
-- [NeoBundle][neobundle]
-- [VIM Plug][vimplug]
+You can install `aylin.vim` with whatever package manager you use:
 
-For example:
+[packer](https://github.com/wbthomason/packer.nvim)
 
-- Pathogen
-  - `git clone https://github.com/AhmedAbdulrahman/vim-aylin.git ~/.vim/bundle/vim-aylin`
-- Vundle
-  - Add `Plugin 'AhmedAbdulrahman/vim-aylin'` to your .vimrc and run `:PluginInstall`
-- NeoBundle
-  - Add `NeoBundle 'AhmedAbdulrahman/vim-aylin'` to your .vimrc and run `:NeoBundleInstall`
-- vim-plug
-  - Add `Plug 'AhmedAbdulrahman/vim-aylin'` to your .vimrc and run `:PlugInstall`
-- Vim-8
-  - `git clone https://github.com/AhmedAbdulrahman/vim-aylin.git ~/.vim/pack/default/start/vim-aylin`
+```lua
+use 'AhmedAbdulrahman/aylin.vim'
+```
 
->> If you don't use a plugin manager just copy the content of vim/colors/ to ~/.vim/colors.
+[vim-plug](https://github.com/junegunn/vim-plug)
+```vim
+Plug 'AhmedAbdulrahman/aylin.vim', { 'branch': 'aylin-nvim' }
+```
 
-## Usage
-In your Vim `(~/.vimrc)` or Neovim `(.config/nvim/init.vim)` configuration, place the following two lines:
+## 🚀 Usage
+
+Enable the colorscheme:
 
 ```vim
-set background=dark
+" Vim Script
 colorscheme aylin
 ```
 
-### True Colors
-
-To provide the best user experience possible, I recommend enabling true colors. To experience the blissfulness of your editor's true colors, place this in your `.vimrc` or `~/.config/nvim/init.vim` file:
-
-```vim
-if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-
-"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-if (has("termguicolors"))
-  set termguicolors
-endif
+```lua
+-- Lua
+vim.cmd[[colorscheme aylin]]
 ```
 
-### Vim Lightline
-To use the included [lightline.vim](https://github.com/itchyny/lightline.vim) theme:
+To enable the `Aylin` theme for `Lualine`, simply specify it in your lualine settings:
 
-```vim
-let g:lightline = {
-      \ 'colorscheme': 'aylin',
-      \ }
+```lua
+require('lualine').setup {
+  options = {
+    -- ... your lualine config
+    theme = 'aylin'
+    -- ... your lualine config
+  }
+}
 ```
 
+To enable the `aylin` colorscheme for `Lightline`:
+
+```vim
+" Vim Script
+let g:lightline = {'colorscheme': 'aylin'}
+```
 ## Contributing
 All forms of contribution are welcome: bug reports, bug fixes, pull requests and simple suggestions. Thanks!
 
