@@ -53,7 +53,7 @@ You can install `aylin.vim` with whatever package manager you use:
 [packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use 'AhmedAbdulrahman/aylin.vim'
+use { 'AhmedAbdulrahman/aylin.vim', branch = '0.5-nvim'}
 ```
 
 [vim-plug](https://github.com/junegunn/vim-plug)
