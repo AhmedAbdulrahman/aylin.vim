@@ -71,7 +71,7 @@ function M.setup(config)
   colors.border = colors.black
 
   -- Popups and statusline always get a dark background
-  colors.bg_popup = colors.bg_dark
+  colors.bg_popup = colors.bg_highlight
   colors.bg_statusline = colors.bg_dark
 
   -- Sidebar and Floats are configurable
