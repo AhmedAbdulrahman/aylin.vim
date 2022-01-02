@@ -8,12 +8,11 @@
     <em>Aylin is a modern and minimal VIM dark theme with bright colors. The theme is based on the great theme <a href="https://github.com/ayu-theme/vscode-ayu">Ayu theme</a>. See Credits for a detailed lineage.</em>
 </p>
 
+> If you want to use this plugin with Neovim 0.5, please use the [**0.5-nvim**](https://github.com/AhmedAbdulrahman/aylin.vim/tree/0.5-nvim) branch
+
 <p align="center">
   <img src="./images/screenshot.png" alt="Screenshot">
 </p>
-
-*If you want to use this plugin with Neovim 0.5, please use the
-`0.5-nvim` branch
 
 ## Installation
 You can install `aylin.vim` with whatever package manager you use. For example:
