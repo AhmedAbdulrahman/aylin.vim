@@ -44,6 +44,51 @@ if !exists("g:aylin_terminal_italics")
   let g:aylin_terminal_italics = 0
 endif
 
+" === Functions ==="
+" Returns a darkened color using given color and the percent to darken it by."
+" Example: color_helper#hex_color_darken('#FFFFFF', 0.10)"
+" Returns: '#E5E5E5'"
+
+function! s:hex_color_darken(color, percent)
+  let l:rgb = s:hex_color_to_rgb(a:color)
+  let l:rgb_darkened = []
+
+  for i in l:rgb
+    call add(l:rgb_darkened, float2nr(i * (1 - a:percent)))
+  endfor
+
+  return s:rgb_color_to_hex(l:rgb_darkened)
+endfunction
+
+
+function! s:hex_color_to_rgb(hex_color)
+  let l:rgb = []
+
+  let l:red   = s:hex_to_dec(strpart(a:hex_color, 1, 2))
+  let l:green = s:hex_to_dec(strpart(a:hex_color, 3, 2))
+  let l:blue  = s:hex_to_dec(strpart(a:hex_color, 5, 2))
+  let l:rgb = [l:red, l:green, l:blue]
+
+  return l:rgb
+endfunction
+
+function! s:hex_to_dec(arg)
+  return (a:arg =~? '^0x') ? a:arg + 0 : ('0x'.a:arg) + 0
+endfunction
+
+function! s:dec_to_hex(arg, padding)
+  return toupper(printf('%0' . a:padding . 'x', a:arg + 0))
+endfunction
+
+function! s:rgb_color_to_hex(rgb_color)
+  let l:hex_color  = '#'
+  let l:hex_color .= s:dec_to_hex(a:rgb_color[0], 2) " red"
+  let l:hex_color .= s:dec_to_hex(a:rgb_color[1], 2) " green"
+  let l:hex_color .= s:dec_to_hex(a:rgb_color[2], 2) " blue"
+
+  return l:hex_color
+endfunction
+
 let colorgroup = {}
 
 " === Highlights ==="
@@ -179,8 +224,8 @@ let colorgroup['LspFloatWinBorder']          = {"GUIFG": _sap, "GUIBG":  _sap }
 let colorgroup['LspFloatWinBorder']          = {"GUIFG": _sap, "GUIBG":  _sap }
 let colorgroup['LspFloatWinBorder']          = {"GUIFG": _sap, "GUIBG":  _sap }
 
-# let colorgroup['BufferLineIndicatorSelected']   = {"GUIFG": _pink}
-# let colorgroup['BufferLineFill']                = {"GUIBG":  _pink}
+ let colorgroup['BufferLineIndicatorSelected']   = {"GUIFG": _l_sky}
+ let colorgroup['BufferLineFill']                = {"GUIBG":  _pink}
 
 "used for highlighting the current line in terminal-debug"
 let colorgroup['debugPC']                    = {"GUIBG":  _black}
@@ -203,10 +248,10 @@ let colorgroup['DiagnosticWarn']         = {"GUIFG":  _marzipan }
 let colorgroup['DiagnosticInfo']         = {"GUIFG":  _sky }
 let colorgroup['DiagnosticHint']         = {"GUIFG":  _d_turquoise }
 
-let colorgroup['DiagnosticVirtualTextError']        = {"GUIFG": _pink, "GUIBG":  color_helper#hex_color_darken(_pink, 0.10) }
-let colorgroup['DiagnosticVirtualTextWarn']         = {"GUIFG": _marzipan,"GUIBG":  color_helper#hex_color_darken(_marzipan, 0.10) }
-let colorgroup['DiagnosticVirtualTextInfo']         = {"GUIFG": _sky,"GUIBG":  color_helper#hex_color_darken(_sky, 0.10) }
-let colorgroup['DiagnosticVirtualTextHint']         = {"GUIFG": _d_turquoise,"GUIBG":  color_helper#hex_color_darken(_d_turquoise, 0.10) }
+let colorgroup['DiagnosticVirtualTextError']        = {"GUIFG": _pink, "GUIBG":  s:hex_color_darken(_pink, 0.10) }
+let colorgroup['DiagnosticVirtualTextWarn']         = {"GUIFG": _marzipan,"GUIBG":  s:hex_color_darken(_marzipan, 0.10) }
+let colorgroup['DiagnosticVirtualTextInfo']         = {"GUIFG": _sky,"GUIBG":  s:hex_color_darken(_sky, 0.10) }
+let colorgroup['DiagnosticVirtualTextHint']         = {"GUIFG": _d_turquoise,"GUIBG":  s:hex_color_darken(_d_turquoise, 0.10) }
 
 let colorgroup['DiagnosticUnderlineError']        = {"style":  "undercurl", "sp": _pink }
 let colorgroup['DiagnosticUnderlineWarn']         = {"style":  "undercurl", "sp": _marzipan }
@@ -704,52 +749,6 @@ for key in keys(colorgroup)
   endif
 endfor
 
-
-" Returns a darkened color using the given color and the percent to darken it"
-" by."
-" Example: color_helper#hex_color_darken('#FFFFFF', 0.10)"
-" Returns: '#E5E5E5'"
-
-function! color_helper#hex_color_darken(color, percent)
-  let l:rgb = color_helper#hex_color_to_rgb(a:color)
-  let l:rgb_darkened = []
-
-  for i in l:rgb
-    call add(l:rgb_darkened, float2nr(i * (1 - a:percent)))
-  endfor
-
-  return color_helper#rgb_color_to_hex(l:rgb_darkened)
-endfunction
-
-function! color_helper#hex_color_to_rgb(hex_color)
-  let l:rgb = []
-
-  if a:hex_color =~ g:indent_guides_color_hex_pattern
-    let l:red   = color_helper#hex_to_dec(strpart(a:hex_color, 1, 2))
-    let l:green = color_helper#hex_to_dec(strpart(a:hex_color, 3, 2))
-    let l:blue  = color_helper#hex_to_dec(strpart(a:hex_color, 5, 2))
-    let l:rgb = [l:red, l:green, l:blue]
-  end
-
-  return l:rgb
-endfunction
-
-function! color_helper#hex_to_dec(arg)
-  return (a:arg =~? '^0x') ? a:arg + 0 : ('0x'.a:arg) + 0
-endfunction
-
-function! color_helper#dec_to_hex(arg, padding)
-  return toupper(printf('%0' . a:padding . 'x', a:arg + 0))
-endfunction
-
-function! color_helper#rgb_color_to_hex(rgb_color)
-  let l:hex_color  = '#'
-  let l:hex_color .= color_helper#dec_to_hex(a:rgb_color[0], 2) " red"
-  let l:hex_color .= color_helper#dec_to_hex(a:rgb_color[1], 2) " green"
-  let l:hex_color .= color_helper#dec_to_hex(a:rgb_color[2], 2) " blue"
-
-  return l:hex_color
-endfunction
 
 " Must appear at the end of the file to work around this oddity:
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
