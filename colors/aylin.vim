@@ -248,10 +248,10 @@ let colorgroup['DiagnosticWarn']         = {"GUIFG":  _marzipan }
 let colorgroup['DiagnosticInfo']         = {"GUIFG":  _sky }
 let colorgroup['DiagnosticHint']         = {"GUIFG":  _d_turquoise }
 
-let colorgroup['DiagnosticVirtualTextError']        = {"GUIFG": _pink, "GUIBG":  s:hex_color_darken(_pink, 0.10) }
-let colorgroup['DiagnosticVirtualTextWarn']         = {"GUIFG": _marzipan,"GUIBG":  s:hex_color_darken(_marzipan, 0.10) }
-let colorgroup['DiagnosticVirtualTextInfo']         = {"GUIFG": _sky,"GUIBG":  s:hex_color_darken(_sky, 0.10) }
-let colorgroup['DiagnosticVirtualTextHint']         = {"GUIFG": _d_turquoise,"GUIBG":  s:hex_color_darken(_d_turquoise, 0.10) }
+let colorgroup['DiagnosticVirtualTextError']        = {"GUIFG": _pink, "GUIBG":  s:hex_color_darken(_pink, 0.80) }
+let colorgroup['DiagnosticVirtualTextWarn']         = {"GUIFG": _marzipan,"GUIBG":  s:hex_color_darken(_marzipan, 0.80) }
+let colorgroup['DiagnosticVirtualTextInfo']         = {"GUIFG": _sky,"GUIBG":  s:hex_color_darken(_sky, 0.80) }
+let colorgroup['DiagnosticVirtualTextHint']         = {"GUIFG": _d_turquoise,"GUIBG":  s:hex_color_darken(_d_turquoise, 0.80) }
 
 let colorgroup['DiagnosticUnderlineError']        = {"style":  "undercurl", "sp": _pink }
 let colorgroup['DiagnosticUnderlineWarn']         = {"style":  "undercurl", "sp": _marzipan }
